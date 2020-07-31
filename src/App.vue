@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div main>
+  <h2>Public Holidays</h2>
+  <holiday-list :holidays="holidays"></holiday-list>
+  <holiday-info v-if="selectedHoliday" :holiday="selectedHoliday"></holiday-info>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { eventBus } from "./main.js";
+import HolidayList from './components/HolidayList.vue'
+import ListItem from './components/ListItem.vue'
+import HolidayInfo from './components/HolidayInfo'
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      holidays: [],
+      selectedHoliday: null
+    }
+  },
   components: {
-    HelloWorld
+      'holiday-list': HolidayList,
+      'list-item': ListItem,
+      'holiday-info': HolidayInfo
+    },
+
+  mounted() {
+    fetch('https://date.nager.at/api/v2/PublicHolidays/2017/AT')
+    .then(result => result.json())
+    .then(holidays => this.holidays = holidays)
+
+    eventBus.$on('holiday-selected', holiday => this.selectedHoliday = holiday);
   }
+
+
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
