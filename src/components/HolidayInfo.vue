@@ -1,20 +1,35 @@
 <template>
-  <div id="info">
-      <h3>{{holiday.name}}</h3>
-        <p><strong>Local name:  </strong>{{holiday.localName}}</p>
-        <p><strong>Celebreated on:  </strong>{{holiday.date}} - {{holiday.fixed}}</p>
-        <p><strong>Launch year:  </strong>{{holiday.launchYear}}</p>
+  <div id="single-info">
+        <h3 id="info-header">{{holiday.name}}</h3>
+        <p>Local name:  <strong>{{holiday.localName}}</strong></p>
+        <p>Celebreated on:  <strong>{{holiday.date}}</strong></p>
+        <p v-if="holiday.launchYear==null"> Launch year:  <strong>is unknown</strong></p>
+        <p v-else>Launch year:  <strong>{{holiday.launchYear}}</strong></p>
+        <button v-on:click="addToFavourites">Add to favourites</button>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['holiday']
+    name: 'holiday-info',
+    props: ['holiday'],
+    methods: {
+        addToFavourites: function() {
+            eventBus.$emit('add-favourite', this.holiday);
+        }
+    }
 
 }
 </script>
 
 <style>
+#single-info{
+    padding: 10px;  
+}
+#info-header{
+    border-bottom: solid 2px white;
+    width: 200px;
+}
 
 
 </style>
