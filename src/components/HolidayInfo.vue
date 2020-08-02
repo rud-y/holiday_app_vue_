@@ -3,9 +3,9 @@
         <h3 id="info-header">{{holiday.name}}</h3>
         <p>Local name:  <strong>{{holiday.localName}}</strong></p>
         <p>Celebreated on:  <strong>{{holiday.date}}</strong></p>
-        <p v-if="holiday.launchYear==null"> Launch year:  <strong>is unknown</strong></p>
+        <p v-if="holiday.launchYear==null"> Launch year:  <strong>unknown</strong></p>
         <p v-else>Launch year:  <strong>{{holiday.launchYear}}</strong></p>
-        <button v-on:click="addToFavourites">Add to favourites</button>
+        
     </div>
 </template>
 
@@ -14,9 +14,7 @@ export default {
     name: 'holiday-info',
     props: ['holiday'],
     methods: {
-        addToFavourites: function() {
-            eventBus.$emit('add-favourite', this.holiday);
-        }
+       
     }
 
 }

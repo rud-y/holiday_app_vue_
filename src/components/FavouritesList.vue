@@ -1,9 +1,9 @@
 <template>
-    <div id="favourites-list">
+    <div id="favourites-list" v-if="favourites">
         <h3>Your favourites</h3>
         <ul>
-        <favourite-list-item v-for="(holiday, index) in favourites"
-        :holiday="holiday" :key="index"></favourite-list-item>
+        <favourites-list-item v-for="(holiday, index) in favourites"
+        :holiday="holiday" :key="index"></favourites-list-item>
         </ul>
     </div>
 </template>
@@ -11,12 +11,11 @@
 <script>
 import FavouritesListItem from './FavouritesListItem.vue'
 export default {
-    name: 'favourite-list',
+    name: 'favourites-list',
     props: ['favourites'],
     components: {
-        'favourite-list-item': FavouritesListItem
+        'favourites-list-item': FavouritesListItem
     }
-
 
 }
 </script>
