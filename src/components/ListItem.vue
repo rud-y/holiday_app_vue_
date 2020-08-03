@@ -44,9 +44,12 @@ export default {
     border-radius: 15px;
     margin: 5px;
     align-content: center;
+    background-color: rgb(126, 55, 55);
 }
 h4{
     padding: 0;
     text-align: center;
+    color: whitesmoke;
+    font-size: 16px;
 }
 </style>

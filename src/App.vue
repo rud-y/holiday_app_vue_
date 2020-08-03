@@ -1,15 +1,14 @@
 <template>
-  <div class="at">
   <div id="main">
-  <h2>Public Holidays List</h2>
 
+  <h2>Public Holidays List</h2>
+  <div class="at"><h4 id="austria">Austria</h4></div>
   <div id="all-info">
   <holiday-list :holidays="holidays"></holiday-list>
   <holiday-info v-if="selectedHoliday" :holiday="selectedHoliday"></holiday-info>
   <favourites-list :favourites="theFavourites"></favourites-list>
   </div>
 
-  </div>
   </div>
 </template>
 
@@ -81,9 +80,13 @@ export default {
 
 .at {
  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4NCjxwYXRoIGZpbGw9IiNkODFlMDUiIGQ9Im0wLDBoOTAwdjYwMGgtOTAweiIvPg0KPHBhdGggZmlsbD0iI2ZmZiIgZD0ibTAsMjAwaDkwMHYyMDBoLTkwMHoiLz4NCjwvc3ZnPg0K');
- width: 120%;
+ width: 75%;
  height: 100%;
  background-size: 100% 100%;
+}
+#austria{
+  width: 200px;
+  color: black;
 }
 
 </style>

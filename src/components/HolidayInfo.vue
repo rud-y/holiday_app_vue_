@@ -5,7 +5,7 @@
         <p>Celebreated on:  <strong>{{holiday.date}}</strong></p>
         <p v-if="holiday.launchYear==null"> Launch year:  <strong>unknown</strong></p>
         <p v-else>Launch year:  <strong>{{holiday.launchYear}}</strong></p>
-        <p>Has fixed date: <strong>{{holiday.fixed}}</strong></p>
+        <p v-if="holiday.fixed == false"><strong>Has no fixed date</strong></p>
         </div>
 </template>
 
