@@ -27,7 +27,14 @@ methods: {
 
 <style>
 .fav-buttons{
-    width: 75px;
-    padding-left: 4px;
+    width: 80px;
+    padding-left: 5px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 15px;
+}
+.fav-buttons:hover {
+    background-color:white;
+    border: solid 2px red;
 }
 </style>

@@ -19,11 +19,14 @@ export default {
 
 <style>
 #single-info{
-    padding-left: 20px; 
+    padding-left: 30px;
+    padding-right: 20px;
+    border-right: solid 1px white; 
+    margin-right: 15px;
 }
 #info-header{
     border-bottom: solid 2px white;
-    width: 200px;
+    width: 170px;
 }
 
 

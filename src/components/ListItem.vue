@@ -43,6 +43,7 @@ export default {
     border: solid 3px whitesmoke;
     border-radius: 15px;
     margin: 5px;
+    align-content: center;
 }
 h4{
     padding: 0;

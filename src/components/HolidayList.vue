@@ -20,11 +20,12 @@ export default {
 </script>
 
 <style>
-#hol-list{
-    padding-left: 20px;
-}
 ul {
     list-style: none;
+}
+#hol-list{
+    display: flex;
+    float: left;
 }
 
 </style>
