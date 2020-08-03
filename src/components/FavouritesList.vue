@@ -1,10 +1,12 @@
 <template>
+<div id="fav-list-box">
     <div id="favourites-list" v-if="favourites">
         <h3>Your favourites</h3>
         <ul>
-        <favourites-list-item v-for="(holiday, index) in favourites"
-        :holiday="holiday" :key="index"></favourites-list-item>
+            <favourites-list-item v-for="(holiday, index) in favourites"
+            :holiday="holiday" :key="index"></favourites-list-item>
         </ul>
+    </div>
     </div>
 </template>
 
@@ -21,5 +23,9 @@ export default {
 </script>
 
 <style>
+fav-list-box{
+    display: flex;
+    float: left;
+}
 
 </style>

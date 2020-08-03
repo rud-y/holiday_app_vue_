@@ -1,7 +1,8 @@
 <template>
   <div id="favourites-list-item">
       <li>{{holiday.name}}  
-          <button id="remove-btn" v-on:click="removeFromFavourites">Remove</button>
+          <button class="fav-buttons" v-on:click="removeFromFavourites">Remove</button>
+          <button class="fav-buttons" v-on:click="displayInfo">More info</button>
           </li>
       </div>
 </template>
@@ -17,15 +18,16 @@ methods: {
        },
     displayInfo: function () {
             eventBus.$emit('holiday-selected', this.holiday);
+    }
 }
 }
-}
+
 
 </script>
 
 <style>
-#remove-btn{
-    width: 60px;
+.fav-buttons{
+    width: 75px;
+    padding-left: 4px;
 }
-
 </style>

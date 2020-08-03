@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="hol-list">
       <ul>
       <list-item v-for="(holiday, index) in holidays" 
       :holiday='holiday' :key="index"></list-item>
@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style>
+#hol-list{
+    padding-left: 20px;
+}
 ul {
     list-style: none;
 }

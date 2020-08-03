@@ -1,7 +1,10 @@
 <template>
   <div>
-      <button><li v-on:click="displayInfo">{{holiday.name}}</li></button>
-        <button v-on:click="addToFavourites">Add to favourites</button>
+        <li id="single-list-item">
+            <h4>{{holiday.name}}</h4>
+            <button class="list-button" v-on:click="displayInfo">Display info</button>
+            <button class="list-button" v-on:click="addToFavourites">Add to favourites</button>
+        </li>
   </div>
 </template>
 
@@ -24,7 +27,25 @@ export default {
 </script>
 
 <style>
-button{
-    width: 12em;
+.list-button{
+    width: 125px;
+    background-color: white;
+    display: block;
+    border-radius: 15px;
+}
+.list-button:hover {
+    background-color:white;
+    border: solid 2px red;
+}
+#single-list-item{
+    width: 220px;
+    height: 110px;
+    border: solid 3px whitesmoke;
+    border-radius: 15px;
+    margin: 5px;
+}
+h4{
+    padding: 0;
+    text-align: center;
 }
 </style>
